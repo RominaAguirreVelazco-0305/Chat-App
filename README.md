@@ -5,11 +5,15 @@
 ## 🌐Lo encuentras en Web:
 
 ## 🖼️ Capturas de Pantalla
+
 Fondo Claro
+
 ![image](https://github.com/user-attachments/assets/e2657629-558f-4555-a7ed-79f86ff0498c)
 
 
+
 Fondo Oscuro
+
 ![image](https://github.com/user-attachments/assets/0c5b8a94-7e42-42d5-92a3-5a2d8b159f7d)
 
 
