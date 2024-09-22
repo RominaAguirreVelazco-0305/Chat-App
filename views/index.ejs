@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/IMG6.PNG" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #d1eaff, #fdbbfc);
+        }
+
+        #phone {
+            width: 320px;
+            height: 550px;
+            border: 16px solid #333;
+            border-radius: 36px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            background-color: #a4f7b1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #phone .top-bar {
+            background-color: #26a69a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        #phone .top-bar .user-status {
+            position: absolute;
+            right: 50px;
+            top: 10px;
+            font-size: 0.8rem;
+        }
+
+        #theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #004d40;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #chat-container {
+            flex-grow: 1;
+            padding: 10px;
+            background: linear-gradient(135deg, #00e3ae 0%, #a4f7b1 100%);
+            background-size: cover;
+            background-position: center;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        li.own-message {
+            background-color: #e5c1f7;
+            color: white;
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+
+        li.other-message {
+            background-color: #a7c7e7;
+            color: white;
+        }
+
+        .profile-pic {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .own-message .profile-pic {
+            margin-left: 10px;
+            margin-right: 0;
+        }
+
+        .message-text {
+            font-size: 0.9rem;
+            word-wrap: break-word;
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        #input-container {
+            display: flex;
+            padding: 8px;
+            background-color: #f7d7e1;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        #input {
+            padding: 8px;
+            width: 70%;
+            border: 2px solid #004d40;
+            border-radius: 8px;
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #004d40;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="phone">
+        <div class="top-bar">
+            Chat App <span class="user-status" id="current-user">Usuario 1</span>
+        </div>
+        <button id="theme-toggle">☀️</button>
+        <div id="chat-container">
+            <ul id="messages"></ul>
+        </div>
+        <div id="input-container">
+            <input id="input" autocomplete="off" placeholder="Escribe tu mensaje aquí" />
+            <button id="send-button">Enviar</button>
+            <button id="switch-user">Cambiar Usuario</button>
+        </div>
+    </div>
+
+    <script>
+        var isDark = false;
+        var isUserOne = true;
+        var messageCount = 0;
+        var currentUser = document.getElementById('current-user');
+
+        var themeToggle = document.getElementById('theme-toggle');
+        var sendButton = document.getElementById('send-button');
+        var input = document.getElementById('input');
+        var messages = document.getElementById('messages');
+        var switchUserButton = document.getElementById('switch-user');
+
+        themeToggle.addEventListener('click', function() {
+            isDark = !isDark;
+            if (isDark) {
+                document.body.style.background = '#333';
+                themeToggle.textContent = '🌙';
+                // Cambiar de usuario automáticamente al cambiar el tema
+                switchUser();
+            } else {
+                document.body.style.background = 'linear-gradient(135deg, #d1eaff, #fdbbfc)';
+                themeToggle.textContent = '☀️';
+                // Cambiar de usuario automáticamente al cambiar el tema
+                switchUser();
+            }
+        });
+
+        function playSendSound() {
+            var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+            audio.play();
+        }
+
+        function sendMessage() {
+            if (input.value.trim() !== '') {
+                var li = document.createElement('li');
+                var profilePic = document.createElement('img'); // Cambiamos a <img> para mostrar la imagen del logo
+                profilePic.classList.add('profile-pic');
+
+                // Asigna un logo diferente para cada usuario
+                if (isUserOne) {
+                    profilePic.src = 'img/IMG1.png'; // Logo del Usuario 1
+                } else {
+                    profilePic.src = 'img/IMG2.png'; // Logo del Usuario 2
+                }
+
+                var messageText = document.createElement('div');
+                messageText.classList.add('message-text');
+                var emoji = isUserOne ? '😊' : '😉'; // Emojis diferentes para cada usuario
+                messageText.innerHTML = input.value + " " + emoji;
+
+                li.appendChild(profilePic); // Adjuntamos la imagen del logo correspondiente
+                li.appendChild(messageText);
+
+                if (isUserOne) {
+                    li.classList.add('own-message');
+                } else {
+                    li.classList.add('other-message');
+                }
+
+                messages.appendChild(li);
+                messages.scrollTop = messages.scrollHeight;
+
+                input.value = '';
+                messageCount++;
+                playSendSound();
+
+                if (messageCount >= 2) {
+                    switchUser();
+                }
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+
+        switchUserButton.addEventListener('click', switchUser);
+
+        function switchUser() {
+            isUserOne = !isUserOne;
+            messageCount = 0;
+            currentUser.textContent = isUserOne ? 'Usuario 1' : 'Usuario 2';
+        }
+
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+
+</body>
+</html>
