@@ -31,39 +31,39 @@ Esta aplicación es un chat interactivo que permite a dos usuarios conectarse y 
 - 📱 **Interfaz Simulada de Teléfono**: La aplicación está diseñada para simular un teléfono móvil con una pantalla de chat interactiva.
 
 ## 🛠️ Instalación
-🛠️ Instala las dependencias
-Dentro del directorio del proyecto, ejecuta el siguiente comando:npm install
-🛠️Inicia la aplicación
-Ejecuta el siguiente comando para iniciar el servidor:npm start
+- 🛠️ Instala las dependencias
+- Dentro del directorio del proyecto, ejecuta el siguiente comando:npm install
+- 🛠️Inicia la aplicación
+- Ejecuta el siguiente comando para iniciar el servidor:npm start
 
 ## 📦 Estructura del Proyecto
-📂 chat-app
-├── 📂 public          # Archivos estáticos (imágenes, CSS, etc.)
-├── 📂 views           # Plantillas EJS
-│   └── index.ejs      # Interfaz del chat
-├── server.js          # Archivo principal del servidor
-├── package.json       # Dependencias y scripts del proyecto
-└── README.md          # Este archivo
+- 📂 chat-app
+- ├── 📂 public          # Archivos estáticos (imágenes, CSS, etc.)
+- ├── 📂 views           # Plantillas EJS
+- │   └── index.ejs      # Interfaz del chat
+- ├── server.js          # Archivo principal del servidor
+- ├── package.json       # Dependencias y scripts del proyecto
+- └── README.md          # Este archivo
 
 ## ⚙️ Tecnologías Utilizadas
-Node.js 🟢: Plataforma del servidor.
-Express 🚀: Framework para manejar las rutas y el servidor.
-Socket.IO ⚡: Para la comunicación en tiempo real entre el cliente y el servidor.
-EJS 📄: Motor de plantillas para renderizar el HTML dinámico.
-CSS 🎨: Para los estilos de la interfaz, simulando una pantalla de teléfono.
+- Node.js 🟢: Plataforma del servidor.
+- Express 🚀: Framework para manejar las rutas y el servidor.
+- Socket.IO ⚡: Para la comunicación en tiempo real entre el cliente y el servidor.
+- EJS 📄: Motor de plantillas para renderizar el HTML dinámico.
+- CSS 🎨: Para los estilos de la interfaz, simulando una pantalla de teléfono.
 
 ## 👩‍💻 Cómo Funciona
-Los usuarios acceden a la aplicación y se les asigna un nombre aleatorio.
-Pueden intercambiar mensajes en tiempo real, que se muestran en una pantalla simulando un teléfono.
-Los usuarios pueden cambiar entre el modo claro y oscuro. 🌞🌜
-Después de enviar dos mensajes, la aplicación cambia automáticamente al otro usuario para seguir chateando.
-Al enviar un mensaje, se reproduce un sonido que indica que el mensaje fue enviado correctamente. 🎶
+- Los usuarios acceden a la aplicación y se les asigna un nombre aleatorio.
+- Pueden intercambiar mensajes en tiempo real, que se muestran en una pantalla simulando un teléfono.
+- Los usuarios pueden cambiar entre el modo claro y oscuro. 🌞🌜
+- Después de enviar dos mensajes, la aplicación cambia automáticamente al otro usuario para seguir chateando.
+- Al enviar un mensaje, se reproduce un sonido que indica que el mensaje fue enviado correctamente. 🎶
 
 ## 📚 Requisitos Previos
-Antes de comenzar, asegúrate de tener instalados los siguientes programas:
+- Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 
-Node.js (versión 14 o superior) 🟢
-npm (Administrador de paquetes de Node.js) 📦
+- Node.js (versión 14 o superior) 🟢
+- npm (Administrador de paquetes de Node.js) 📦
 
 
 ## 🌐La aplicación estará disponible en    http://localhost:4010.
