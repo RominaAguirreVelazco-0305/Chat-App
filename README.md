@@ -6,10 +6,13 @@
 
 ## 🖼️ Capturas de Pantalla
 Fondo Claro
-![image](https://github.com/user-attachments/assets/e2297c19-5142-49bd-8796-16fbcdc25037)
+![image](https://github.com/user-attachments/assets/e2657629-558f-4555-a7ed-79f86ff0498c)
+
 
 Fondo Oscuro
-![image](https://github.com/user-attachments/assets/360cb7bb-5a45-4f9a-9c7d-faed95676006)
+![image](https://github.com/user-attachments/assets/0c5b8a94-7e42-42d5-92a3-5a2d8b159f7d)
+
+
 
 ## 📋 Descripción
 
