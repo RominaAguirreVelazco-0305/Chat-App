@@ -2,7 +2,7 @@
 
 ¡Bienvenido a la **Chat App**! 🗨️ Esta aplicación permite a dos usuarios intercambiar mensajes en tiempo real, utilizando **Socket.IO** y **Node.js**. 
 
-## 🌐Lo encuentras en Web:
+## 🌐Lo encuentras en Web: https://mi-chat-d4f2ac12202c.herokuapp.com/
 
 ## 🖼️ Capturas de Pantalla
 
@@ -65,7 +65,5 @@ Esta aplicación es un chat interactivo que permite a dos usuarios conectarse y 
 - Node.js (versión 14 o superior) 🟢
 - npm (Administrador de paquetes de Node.js) 📦
 
-
-## 🌐La aplicación estará disponible en    http://localhost:4010.
 
 Desarrollado con ❤️ por Romina Aguirre.
