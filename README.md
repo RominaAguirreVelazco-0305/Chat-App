@@ -69,4 +69,4 @@ Esta aplicación es un chat interactivo que permite a dos usuarios conectarse y 
 - Puedes visualizar mi PÁGINA en línea visitando el siguiente enlace:
 https://github.com/RominaAguirreVelazco-0305/Chat-App.git
 
-- Desarrollado con ❤️ por Romina Aguirre.
+Desarrollado con ❤️ por Romina Aguirre.
