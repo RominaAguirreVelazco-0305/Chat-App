@@ -64,6 +64,8 @@ Esta aplicación es un chat interactivo que permite a dos usuarios conectarse y 
 
 - Node.js (versión 14 o superior) 🟢
 - npm (Administrador de paquetes de Node.js) 📦
-
-
+- 
+## 🌐 Cómo Visualizar mi repositorio
+- Puedes visualizar mi PÁGINA en línea visitando el siguiente enlace:
+https://github.com/RominaAguirreVelazco-0305/Chat-App.git
 Desarrollado con ❤️ por Romina Aguirre.
